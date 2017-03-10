@@ -1,0 +1,18 @@
+<div class="has-header">
+  <ion-view>
+    <ion-nav-title>游戏分类</ion-nav-title>
+    <ion-content >
+      <div >
+        <div ng-click="mine.liebiaoFn($index)"  class=" item item-thumbnail-left" style="float: left; width:47% ; margin: 5px" ng-repeat="item in mine.leibiaoArr" >
+
+            <img style="width: 80px;" src="{{item.Icon}}" alt="">
+            <br>
+            <h3>{{item.TypeName}}</h3>
+            <br>
+            <span>{{item.AppSum}}</span>
+        </div>
+      </div>
+
+    </ion-content>
+  </ion-view>
+</div>

@@ -1,0 +1,31 @@
+<div class="has-header">
+  <ion-view>
+    <ion-nav-title>专题分类</ion-nav-title>
+    <ion-content >
+      <style>
+        p {
+          font-size: 12px;
+        }
+        div{
+
+        }
+      </style>
+      <div class="row row-wrap">
+        <div ng-click="flzt($index)" class="col col-32 " style="margin: 10px" ng-repeat="item in zhuantifenlei" >
+          <div style="width: 90px; border: 1px solid white ; word-wrap: break-word; word-break: normal;" >
+
+            <div style="width: 90px; height:90px; background: url({{item.Icon}});background-repeat: no-repeat;text-align: center;background-size: 100% 100%; border-radius:10%;">
+            </div>
+            <div style=" position: relative; top: -20px;">
+              <p style=" background: rgba(0,0,0,0.3);color: white;text-indent:1em">{{item.Total}}款</p>
+              <span>{{item.Title}}</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </ion-content>
+  </ion-view>
+</div>

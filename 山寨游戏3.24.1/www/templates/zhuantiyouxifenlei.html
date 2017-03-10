@@ -1,0 +1,55 @@
+<div class="has-header">
+  <ion-view>
+    <ion-nav-title>{{data.Title}}</ion-nav-title>
+    <ion-content>
+      <style>
+        .toubu{
+          margin: 5px;
+          width:98%;
+          height: 150px;
+
+        }
+      </style>
+      <div style="position: relative">
+        <div class="toubu" style="background: url({{yxhj.Cover}});background-repeat: no-repeat;text-align: center;background-size: 100% 100%;">
+
+        </div>
+
+        <span style="color: white; background: rgba(0,0,0,0.8);line-height: 20px; font-size: 20px; position: relative;top: -70px;left: 20px;">
+          {{yxhj.Title}}
+        </span>
+        <br>
+        <i style="color: white; background: rgba(0,0,0,0.8);line-height: 20px; font-size: 15px; position: relative;top: -65px;left: 20px;">
+         <i class="ion-heart"></i>喜欢{{yxhj.Love}}&nbsp;&nbsp;<i class="ion-paper-airplane"></i>热度{{yxhj.Hits}}
+        </i>
+        <div style="position: relative;top: -30px;">
+          <p>{{yxhj.Content}}</p>
+          <span>作者:{{yxhj.Author}}</span><span style="position: relative;left:30%;">更新时间:{{yxhj.PostDate}}</span>
+        </div>
+      </div>
+      <hr>
+
+      <ion-list>
+        <ion-item class="item item-thumbnail-left item-button-right " ng-click="hejixq($index)" ng-repeat="item in yxsj" >
+          <img style="width: 80px;" src="{{item.Icon}}" alt="">
+          <br>
+          <h2>{{item.Title}}</h2>
+          <span ng-repeat="items in item.Style">
+            <span  style="font-size: 10px;background: #00bfff	">{{items}}</span>
+          </span>
+          <button side="right" class="button button-positive ">下载</button>
+          <i style="position: absolute;right: 20px;bottom: 20px;">{{item.NetSize}}MB</i>
+        </ion-item>
+      </ion-list>
+
+      <ion-infinite-scroll
+
+        on-infinite="loadMore()"
+        immediate-check="false"
+        distance="0%">
+      </ion-infinite-scroll>
+
+
+    </ion-content>
+  </ion-view>
+</div>

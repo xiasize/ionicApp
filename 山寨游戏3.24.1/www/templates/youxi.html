@@ -1,0 +1,89 @@
+<div class="has-header">
+  <ion-view cache-view="false">
+    <ion-nav-title>{{mine.listArr.Title}}</ion-nav-title>
+
+   <ion-content>
+
+     <style>
+       i{
+         font-size: 12px;
+         color: black;
+       }
+
+     </style>
+    <div class="row row-wrap" >
+      <div class=" col col-20" >
+        <img style="width: 100%; padding-top: 20px" src="{{mine.listArr.Icon}}" alt="">
+      </div>
+      <div class="col col-40" style="font-size: 20px;">
+       <ion-item style="border: 0px;">
+         <ion-list>
+           <i>类型:</i><strong>{{mine.listArr.TypeName}}</strong>
+         </ion-list>
+         <ion-list>
+           <i>授权:</i><i>{{mine.listArr.Author}}</i>
+         </ion-list>
+         <ion-list>
+           <i>版本:</i><i>{{mine.listArr.Version}}</i>
+         </ion-list>
+         <ion-list>
+           <i>系统:</i>
+         </ion-list>
+         <ion-list>
+           <i> 标签:</i><span ng-repeat="item in mine.listArr.Style">
+           <i>{{item}}</i>
+         </span>
+         </ion-list>
+       </ion-item>
+      </div>
+      <div class="col col-40" style="font-size: 30px;">
+        <ion-item style="border: 0px;">
+          <ion-list>
+            <i>语言:</i><i>{{mine.listArr.Language}}</i>
+          </ion-list>
+          <ion-list>
+            <i>大小:</i> <i>{{mine.listArr.NetSize}}MB</i>
+          </ion-list>
+          <ion-list>
+            <i>厂商:</i><i>{{mine.listArr.CP}}</i>
+          </ion-list>
+          <ion-list>
+            <i>日期:</i><i>{{mine.listArr.PostDate}}</i>
+          </ion-list>
+
+
+        </ion-item>
+      </div>
+    </div>
+      <div>
+        <button style="width: 79%; text-align: center" class="button button-balanced button-large" ng-click="openUrl()">下载</button>
+        <button style="width: 19%; height: auto" class="ion-android-share-alt button button-positive button-large" ng-click="fenxiang()"></button>
+      </div>
+
+
+
+  <div class="row " style="overflow-x:scroll; padding: 0px 3px;" >
+      <div class="col col-32" ng-repeat="item in mine.listArr.Thumbnail" >
+        <img src="{{item}}" alt="" style="margin: 0px 2px;">
+      </div>
+  </div>
+     <hr>
+     <div>
+       <p>小编评论</p>
+       <p style="color: palevioletred">{{mine.listArr.Explain}}</p>
+     </div>
+     <hr>
+      <div>
+        <p>文件说明</p>
+        <p style="color: green;">{{mine.listArr.FileInfo}}</p>
+      </div>
+     <hr>
+     <div>
+       <p>官方简介</p>
+       <p>{{mine.listArr.Content}}</p>
+     </div>
+   </ion-content>
+
+
+  </ion-view>
+</div>

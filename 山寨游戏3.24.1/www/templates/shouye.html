@@ -1,0 +1,39 @@
+<div class="has-header">
+  <ion-view>
+    <ion-nav-title>首页</ion-nav-title>
+    <ion-content>
+      <ion-refresher
+        pulling-text="下拉刷新..."
+        on-refresh="doRefresh()">
+      </ion-refresher>
+      <ion-slide-box style=" position: relative" dose-cotinue="true" auto-play="true" slide-interval="2000" on-slide-changed="slideHasChanged($index)"  class="slidebox"  delegate-handle="slideimgs">
+        <ion-slide ng-click="mine.lunbo($index)"  ng-repeat="item in mine.lunboArr">
+          <img style="width: 100%;height: 200px;" src="{{item.Icon}}" alt="">
+          <div style="position: fixed; bottom: 0px; width:100%;text-align: center; background: rgba(0,0,0,0.5); color: white">{{item.Title}}</div>
+        </ion-slide>
+      </ion-slide-box>
+
+
+      <!--列表展示-->
+
+        <ion-list>
+          <ion-item class="item item-thumbnail-left item-button-right " ng-click="mine.itemClick($index)" ng-repeat="item in mine.lbArr" >
+            <img style="width: 80px;" src="{{item.Icon}}" alt="">
+            <br>
+            <h2>{{item.Title}}</h2>
+          <span ng-repeat="items in item.Style">
+            <span  style="font-size: 10px;background: #00bfff	">{{items}}</span>
+          </span>
+            <button side="right" class="button button-positive ">下载</button>
+            <i style="position: absolute;right: 20px;bottom: 20px;">{{item.NetSize}}MB</i>
+          </ion-item>
+        </ion-list>
+      <ion-infinite-scroll
+        on-infinite="loadMore()"
+        immediate-check="false"
+        distance="1%">
+      </ion-infinite-scroll>
+    </ion-content>
+    </ion-content>
+  </ion-view>
+</div>
